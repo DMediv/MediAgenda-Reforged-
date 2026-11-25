@@ -2,6 +2,7 @@ package com.example.mediagendareforged.modelo
 import com.example.mediagendareforged.conexion.retrofitCliente
 
 class clsAutentificacionModelo {
+
     suspend fun iniciarSesion(usuario: String, contrasena: String): dataRespuesta<dataSesion> {
         val resultado = retrofitCliente.llamar {
             retrofitCliente.api.iniciarSesion(dataLoginPeticion(usuario, contrasena))
