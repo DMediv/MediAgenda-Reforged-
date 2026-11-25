@@ -1,6 +1,7 @@
 package com.example.mediagendareforged.vista
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,5 +18,8 @@ class PanelMedicoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val nombre = intent.getStringExtra("NOMBRE") ?: ""
+        Toast.makeText(this, "Bienvenido(a), $nombre", Toast.LENGTH_LONG).show()
     }
 }

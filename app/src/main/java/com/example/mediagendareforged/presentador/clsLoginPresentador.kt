@@ -1,6 +1,7 @@
 package com.example.mediagendareforged.presentador
 
 import android.util.Log
+import com.example.mediagendareforged.conexion.retrofitCliente
 import com.example.mediagendareforged.modelo.clsAutentificacionModelo
 import com.example.mediagendareforged.vista.LoginActivity
 import kotlinx.coroutines.CoroutineScope
@@ -30,19 +31,21 @@ class clsLoginPresentador(private val vista: LoginActivity) {
                 vista.mostrarCargando(false)
                 val sesion = resultado.data
 
-                if (resultado.status == "success" && sesion != null) {
-
-                    Log.d("MediAgenda", "Sesión iniciada: rol=${sesion.rol}, nombre=${sesion.nombre}")
-
-                    when (sesion.rol) {
-                        "paciente" -> vista.abrirPanelPaciente(sesion.nombre)
-                        "medico" -> vista.abrirPanelMedico(sesion.nombre)
-                        else -> vista.mostrarError("Rol no reconocido. Intenta más tarde.")
+                when {
+                    resultado.status == retrofitCliente.EXITO && sesion != null -> {
+                        Log.d("MediAgenda", "Sesión iniciada: rol=${sesion.rol}, nombre=${sesion.nombre}")
+                        when (sesion.rol) {
+                            "paciente" -> vista.abrirPanelPaciente(sesion.nombre)
+                            "medico" -> vista.abrirPanelMedico(sesion.nombre)
+                            else -> vista.mostrarError("Rol no reconocido. Intenta más tarde.")
+                        }
                     }
-                } else {
-                    vista.mostrarError(resultado.message)
+                    resultado.status == retrofitCliente.SIN_CONEXION -> vista.abrirSinConexion()
+                    else -> vista.mostrarError(resultado.message)
                 }
             }
         }
     }
+
+
 }

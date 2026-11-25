@@ -9,4 +9,11 @@
     <string name="login_sin_cuenta">¿No tienes cuenta?</string>
     <string name="login_crear_cuenta">Crear cuenta</string>
     <string name="desc_logo">Logotipo de MediAgenda</string>
+
+    <string name="expirada_titulo">Tu sesión expiró</string>
+    <string name="expirada_texto">Por seguridad, la sesión se cierra al cerrar la app o después de 10 minutos en segundo plano.</string>
+    <string name="expirada_boton">Volver a iniciar sesión</string>
+    <string name="sin_conexion_titulo">Sin conexión</string>
+    <string name="sin_conexion_texto">No pudimos conectarnos al servidor. Revisa tu conexión a internet e intenta de nuevo.</string>
+    <string name="sin_conexion_boton">Reintentar</string>
 </resources>

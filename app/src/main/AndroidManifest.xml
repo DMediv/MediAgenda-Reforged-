@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".conexion.MediAgendaApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,11 +14,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MediAgendaReforged">
-        <activity
-            android:name=".vista.MainActivity"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+        android:theme="@style/Theme.MediAgendaReforged"
+        >
+
         <activity
             android:name=".vista.LoginActivity"
             android:exported="true"
@@ -34,6 +33,14 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".vista.PanelMedicoActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".vista.SesionExpiradaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".vista.SinConexionActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

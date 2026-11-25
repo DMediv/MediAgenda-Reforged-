@@ -8,7 +8,7 @@ class clsAutentificacionModelo {
             retrofitCliente.api.iniciarSesion(dataLoginPeticion(usuario, contrasena))
         }
 
-        if (resultado.status == "success" && resultado.data != null) {
+        if (resultado.status == retrofitCliente.EXITO && resultado.data != null) {
             retrofitCliente.token = resultado.data.token
         }
         return resultado
