@@ -1,5 +1,4 @@
 package com.example.mediagendareforged.modelo
-
 import com.example.mediagendareforged.conexion.retrofitCliente
 
 class clsAutentificacionModelo {
