@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MediAgenda(Reforged)</string>
+    <string name="app_nombre_visible">MediAgenda</string>
+
+    <string name="login_usuario">Usuario o correo</string>
+    <string name="login_contrasena">Contraseña</string>
+    <string name="login_olvide">¿Olvidaste tu contraseña?</string>
+    <string name="login_acceder">Acceder</string>
+    <string name="login_sin_cuenta">¿No tienes cuenta?</string>
+    <string name="login_crear_cuenta">Crear cuenta</string>
+    <string name="desc_logo">Logotipo de MediAgenda</string>
 </resources>
