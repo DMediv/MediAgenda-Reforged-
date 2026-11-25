@@ -1,5 +1,4 @@
-package com.example.mediagenda.modelo
-
+package com.example.mediagendareforged.modelo
 import com.google.gson.annotations.SerializedName
 
 data class dataHorariosDia(
