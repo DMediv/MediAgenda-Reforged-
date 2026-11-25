@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margen_pantalla">16dp</dimen>
+    <dimen name="separacion_lista">12dp</dimen>
+    <dimen name="separacion_campos">16dp</dimen>
+    <dimen name="separacion_secciones">24dp</dimen>
+    <dimen name="relleno_tarjeta">16dp</dimen>
+    <dimen name="alto_barra_superior">56dp</dimen>
+    <dimen name="alto_navegacion">64dp</dimen>
+    <dimen name="alto_boton">48dp</dimen>
+    <dimen name="alto_campo">42dp</dimen>
+    <dimen name="borde">2dp</dimen>
+    <dimen name="sombra_boton">3dp</dimen>
+    <dimen name="icono">24dp</dimen>
+    <dimen name="icono_estado">48dp</dimen>
+</resources>

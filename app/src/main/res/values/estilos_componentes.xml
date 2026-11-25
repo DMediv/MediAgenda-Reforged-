@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Boton" parent="Widget.AppCompat.Button">
+        <item name="android:minHeight">@dimen/alto_boton</item>
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">19dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="Boton.Principal">
+        <item name="android:background">@drawable/btn_principal</item>
+        <item name="android:textColor">@color/texto_btn_principal</item>
+    </style>
+
+    <style name="Boton.Secundario">
+        <item name="android:background">@drawable/btn_secundario</item>
+        <item name="android:textColor">@color/texto_btn_secundario</item>
+    </style>
+
+    <style name="Campo" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="hintEnabled">false</item>
+        <item name="boxBackgroundColor">@color/blanco</item>
+        <item name="boxStrokeColor">@color/borde_campo</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/rojo_alerta</item>
+        <item name="errorTextColor">@color/rojo_alerta</item>
+        <item name="errorIconTint">@color/rojo_alerta</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+        <item name="boxCornerRadiusBottomStart">4dp</item>
+        <item name="boxCornerRadiusBottomEnd">4dp</item>
+    </style>
+
+    <style name="CampoTexto" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:minHeight">@dimen/alto_campo</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/negro</item>
+    </style>
+</resources>

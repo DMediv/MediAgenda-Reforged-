@@ -1,8 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.MediAgendaReforged" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.MediAgendaReforged" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/azul_primario</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorError">@color/rojo_alerta</item>
+        <item name="android:windowBackground">@color/fondo</item>
+        <item name="android:textColor">@color/negro</item>
+
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="fontFamily">@font/inter_regular</item>
     </style>
 
     <style name="Theme.MediAgendaReforged" parent="Base.Theme.MediAgendaReforged" />
