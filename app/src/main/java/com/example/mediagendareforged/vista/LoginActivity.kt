@@ -67,7 +67,9 @@ class LoginActivity : AppCompatActivity() {
                 txtContrasena.text.toString()
             )
         }
-        txtCrearCuenta.setOnClickListener { mostrarAviso("Registro: próximamente") }
+        txtCrearCuenta.setOnClickListener {
+            startActivity(Intent(this, RegistroActivity::class.java))
+        }
         txtOlvideContrasena.setOnClickListener { mostrarAviso("Recuperar contraseña: próximamente") }
     }
 
