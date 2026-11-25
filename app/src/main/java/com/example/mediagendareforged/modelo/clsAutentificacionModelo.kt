@@ -13,4 +13,22 @@ class clsAutentificacionModelo {
         }
         return resultado
     }
+
+    suspend fun verificarCorreo(correo: String): dataRespuesta<dataDisponibilidad> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.verificarDisponibilidad(correo = correo)
+        }
+    }
+
+    suspend fun verificarUsuario(usuario: String): dataRespuesta<dataDisponibilidad> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.verificarDisponibilidad(usuario = usuario)
+        }
+    }
+
+    suspend fun registrarPaciente(datos: dataRegistroPeticion): dataRespuesta<dataRegistro> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.registrarPaciente(datos)
+        }
+    }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="lista_genero">
+        <item>Femenino</item>
+        <item>Masculino</item>
+        <item>Otro</item>
+        <item>Prefiero no decirlo</item>
+    </string-array>
+
+    <string-array name="lista_tipo_sangre">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>Desconocido</item>
+    </string-array>
+
+    <string-array name="lista_tabaquismo">
+        <item>No fuma</item>
+        <item>Fuma ocasionalmente</item>
+        <item>Fuma diariamente</item>
+        <item>Exfumador(a)</item>
+    </string-array>
+
+    <string-array name="lista_alcohol">
+        <item>No consume</item>
+        <item>Ocasional</item>
+        <item>Frecuente</item>
+        <item>Diario</item>
+    </string-array>
+</resources>

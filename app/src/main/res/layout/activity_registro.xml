@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.RegistroActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_barra_superior"
+        android:background="@color/blanco"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/desc_regresar"
+            android:src="@drawable/ic_regresar"
+            app:tint="@color/negro" />
+
+        <TextView
+            style="@style/Texto.TituloBarra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/registro_titulo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margen_pantalla"
+        android:paddingTop="@dimen/separacion_campos"
+        android:paddingEnd="@dimen/margen_pantalla">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtPaso1"
+                style="@style/Texto.Etiqueta"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/paso_activo"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/blanco" />
+            <TextView
+                style="@style/Texto.Nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@string/paso_personales" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtPaso2"
+                style="@style/Texto.Etiqueta"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/paso_pendiente"
+                android:gravity="center"
+                android:text="2" />
+            <TextView
+                style="@style/Texto.Nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@string/paso_contacto" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtPaso3"
+                style="@style/Texto.Etiqueta"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/paso_pendiente"
+                android:gravity="center"
+                android:text="3" />
+            <TextView
+                style="@style/Texto.Nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@string/paso_historial" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtPaso4"
+                style="@style/Texto.Etiqueta"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/paso_pendiente"
+                android:gravity="center"
+                android:text="4" />
+            <TextView
+                style="@style/Texto.Nota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@string/paso_cuenta" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtPasoActual"
+        style="@style/Texto.Nota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen_pantalla"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/texto_secundario"
+        tools:text="Paso 1 de 4" />
+
+    <ScrollView
+        android:id="@+id/scrPasos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ViewFlipper
+            android:id="@+id/vfPasos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margen_pantalla">
+
+            <include layout="@layout/registro_paso1" />
+            <include layout="@layout/registro_paso2" />
+            <include layout="@layout/registro_paso3" />
+            <include layout="@layout/registro_paso4" />
+        </ViewFlipper>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/prgCargando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/margen_pantalla">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAnterior"
+            style="@style/Boton.Secundario"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_boton"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:text="@string/registro_anterior"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSiguiente"
+            style="@style/Boton.Principal"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/alto_boton"
+            android:layout_weight="1"
+            android:text="@string/registro_siguiente" />
+    </LinearLayout>
+</LinearLayout>

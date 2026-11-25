@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Texto.Encabezado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paso_historial" />
+
+    <TextView
+        style="@style/Texto.Secundario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="@dimen/separacion_secciones"
+        android:text="@string/desc_historial" />
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_tipo_sangre" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTipoSangre"
+        style="@style/CampoLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/txtTipoSangre"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:simpleItems="@array/lista_tipo_sangre" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                style="@style/Texto.Etiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/campo_peso" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPeso"
+                style="@style/Campo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPeso"
+                    style="@style/CampoTexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLength="6" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                style="@style/Texto.Etiqueta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/campo_estatura" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEstatura"
+                style="@style/Campo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtEstatura"
+                    style="@style/CampoTexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLength="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_alergias" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAlergias"
+        style="@style/Campo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtAlergias"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="255" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_enfermedades" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEnfermedades"
+        style="@style/Campo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEnfermedades"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="255" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_medicamentos" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilMedicamentos"
+        style="@style/Campo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtMedicamentos"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="255" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_cirugias" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCirugias"
+        style="@style/Campo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtCirugias"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="255" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_antecedentes" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAntecedentes"
+        style="@style/Campo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtAntecedentes"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine|textCapSentences"
+            android:maxLength="255" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_tabaquismo" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTabaquismo"
+        style="@style/CampoLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_campos">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/txtTabaquismo"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:simpleItems="@array/lista_tabaquismo" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        style="@style/Texto.Etiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="@string/campo_alcohol" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAlcohol"
+        style="@style/CampoLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/separacion_secciones">
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/txtAlcohol"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:simpleItems="@array/lista_alcohol" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        style="@style/Texto.Secundario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/aviso_info"
+        android:padding="12dp"
+        android:text="@string/aviso_historial"
+        android:textColor="@color/negro" />
+</LinearLayout>
