@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/margen_pantalla"
+    tools:context=".vista.SinConexionActivity">
+
+    <FrameLayout
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:background="@drawable/circulo_estado">
+
+        <ImageView
+            android:layout_width="@dimen/icono_estado"
+            android:layout_height="@dimen/icono_estado"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_sin_conexion"
+            app:tint="@color/azul_primario" />
+    </FrameLayout>
+
+    <TextView
+        style="@style/Texto.Encabezado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/separacion_secciones"
+        android:text="@string/sin_conexion_titulo" />
+
+    <TextView
+        style="@style/Texto.Cuerpo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="@string/sin_conexion_texto" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnReintentar"
+        style="@style/Boton.Principal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_boton"
+        android:layout_marginTop="@dimen/separacion_secciones"
+        android:text="@string/sin_conexion_boton" />
+</LinearLayout>

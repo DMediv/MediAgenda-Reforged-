@@ -8,9 +8,27 @@ class clsAutentificacionModelo {
             retrofitCliente.api.iniciarSesion(dataLoginPeticion(usuario, contrasena))
         }
 
-        if (resultado.status == "success" && resultado.data != null) {
+        if (resultado.status == retrofitCliente.EXITO && resultado.data != null) {
             retrofitCliente.token = resultado.data.token
         }
         return resultado
+    }
+
+    suspend fun verificarCorreo(correo: String): dataRespuesta<dataDisponibilidad> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.verificarDisponibilidad(correo = correo)
+        }
+    }
+
+    suspend fun verificarUsuario(usuario: String): dataRespuesta<dataDisponibilidad> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.verificarDisponibilidad(usuario = usuario)
+        }
+    }
+
+    suspend fun registrarPaciente(datos: dataRegistroPeticion): dataRespuesta<dataRegistro> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.registrarPaciente(datos)
+        }
     }
 }

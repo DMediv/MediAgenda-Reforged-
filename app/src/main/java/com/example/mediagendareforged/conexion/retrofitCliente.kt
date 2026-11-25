@@ -16,6 +16,11 @@ object retrofitCliente {
 
     const val BASE_URL = "https://mediagenda.4buthh.com/api/"
 
+    const val EXITO = "success"
+    const val ERROR = "error"
+    const val SIN_CONEXION = "sin_conexion"
+    const val SESION_EXPIRADA = "sesion_expirada"
+
     var token: String = ""
 
     private val clienteHttp: OkHttpClient by lazy {
@@ -56,23 +61,27 @@ object retrofitCliente {
         }
         return try {
             val error = Gson().fromJson(respuesta.errorBody()?.string(), dataRespuesta::class.java)
-            dataRespuesta(status = "error", message = error.message, data = null)
+            dataRespuesta(status = ERROR, message = error.message, data = null)
         } catch (e: Exception) {
-            dataRespuesta(status = "error", message = "Ocurrió un error (${respuesta.code()}). Intenta más tarde.", data = null)
+            dataRespuesta(status = ERROR, message = "Ocurrió un error (${respuesta.code()}). Intenta más tarde.", data = null)
         }
     }
 
     suspend fun <T> llamar(peticion: suspend () -> Response<dataRespuesta<T>>): dataRespuesta<T> {
         return try {
             val respuesta = peticion()
-            if (respuesta.code() == 401) token = ""
+
+            if (respuesta.code() == 401 && token.isNotEmpty()) {
+                token = ""
+                return dataRespuesta(status = SESION_EXPIRADA, message = "Tu sesión expiró. Inicia sesión de nuevo.")
+            }
             leerRespuesta(respuesta)
         } catch (e: IOException) {
-            dataRespuesta(status = "error", message = "Sin conexión. Revisa tu conexión a internet e intenta de nuevo.")
+            dataRespuesta(status = SIN_CONEXION, message = "Sin conexión. Revisa tu conexión a internet e intenta de nuevo.")
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
-            dataRespuesta(status = "error", message = "Ocurrió un error inesperado. Intenta más tarde.")
+            dataRespuesta(status = ERROR, message = "Ocurrió un error inesperado. Intenta más tarde.")
         }
     }
 }

@@ -67,8 +67,9 @@ class LoginActivity : AppCompatActivity() {
                 txtContrasena.text.toString()
             )
         }
-        // Se conectan cuando existan sus pantallas (A3 y A7)
-        txtCrearCuenta.setOnClickListener { mostrarAviso("Registro: próximamente") }
+        txtCrearCuenta.setOnClickListener {
+            startActivity(Intent(this, RegistroActivity::class.java))
+        }
         txtOlvideContrasena.setOnClickListener { mostrarAviso("Recuperar contraseña: próximamente") }
     }
 
@@ -95,6 +96,10 @@ class LoginActivity : AppCompatActivity() {
         lytAvisoError.visibility = View.GONE
     }
 
+    fun abrirSinConexion() {
+        clsNavegacion.abrirSinConexion(this)
+    }
+
     fun abrirPanelPaciente(nombre: String) {
         abrirPanel(Intent(this, PanelPacienteActivity::class.java), nombre)
     }
@@ -112,4 +117,6 @@ class LoginActivity : AppCompatActivity() {
     private fun mostrarAviso(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
     }
+
+
 }
