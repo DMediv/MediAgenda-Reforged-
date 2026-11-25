@@ -31,7 +31,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
 
-    buildFeatures { buildConfig = true }
+    buildFeatures { buildConfig = true}
 }
 
 dependencies {
