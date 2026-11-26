@@ -28,6 +28,7 @@
     <style name="Texto.Etiqueta">
         <item name="android:fontFamily">@font/inter_medium</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/azul_primario</item>
     </style>
 
     <style name="Texto.Secundario">

@@ -64,4 +64,9 @@
 
     <string name="desc_regresar">Regresar</string>
     <string name="formato_fecha">DD/MM/AAAA</string>
+
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_agenda">Agenda</string>
+    <string name="nav_pacientes">Pacientes</string>
+    <string name="desc_cerrar_sesion">Cerrar sesión</string>
 </resources>

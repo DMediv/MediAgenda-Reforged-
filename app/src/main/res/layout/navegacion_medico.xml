@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/alto_navegacion"
+    android:background="@drawable/fondo_navegacion"
+    android:orientation="horizontal"
+    android:paddingTop="2dp">
+
+    <LinearLayout
+        android:id="@+id/navInicio"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_inicio"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/nav_inicio"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navAgenda"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_agenda"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/nav_agenda"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/navPacientes"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_pacientes"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/nav_pacientes"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+</LinearLayout>

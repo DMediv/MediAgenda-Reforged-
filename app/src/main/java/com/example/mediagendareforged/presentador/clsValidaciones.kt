@@ -82,7 +82,6 @@ object clsValidaciones {
         }
     }
 
-    // Convierte el texto a número (acepta coma o punto) y revisa el rango
     private fun validarDecimal(valor: String, minimo: Double, maximo: Double, mensajeRango: String): String? {
         validarObligatorio(valor)?.let { return it }
         val numero = valor.trim().replace(',', '.').toDoubleOrNull()
