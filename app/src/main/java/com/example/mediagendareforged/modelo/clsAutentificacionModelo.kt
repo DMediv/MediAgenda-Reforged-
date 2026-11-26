@@ -31,4 +31,12 @@ class clsAutentificacionModelo {
             retrofitCliente.api.registrarPaciente(datos)
         }
     }
+
+    suspend fun cerrarSesion(): dataRespuesta<Any> {
+        val resultado = retrofitCliente.llamar {
+            retrofitCliente.api.cerrarSesion()
+        }
+        retrofitCliente.token = ""
+        return resultado
+    }
 }
