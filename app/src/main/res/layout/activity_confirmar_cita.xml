@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/fondo">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:background="@color/azul_primario">
+        <TextView android:layout_width="28dp" android:layout_height="48dp" android:gravity="center" android:text="‹" android:textSize="30sp" android:textColor="@color/blanco"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Agendar cita" android:textSize="20sp" android:textColor="@color/blanco" android:textStyle="bold"/>
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✓ Médico ✓ Horario ● Confirmar" android:textSize="14sp" android:textColor="@color/azul_primario" android:textStyle="bold"/>
+            <View android:layout_width="match_parent" android:layout_height="16dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ⓘ ¿Confirmar cita?" android:textSize="18sp" android:textColor="@color/negro" android:textStyle="bold"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Revisa los datos antes de confirmar" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
+            <View android:layout_width="match_parent" android:layout_height="12dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_tarjeta">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Médico" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dr. Alejandro Ramírez Fuentes" android:textSize="14sp" android:textColor="@color/negro"/>
+                <View android:layout_width="match_parent" android:layout_height="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Especialidad" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medicina interna" android:textSize="14sp" android:textColor="@color/negro"/>
+                <View android:layout_width="match_parent" android:layout_height="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fecha" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="jue 12 nov 2026" android:textSize="14sp" android:textColor="@color/negro"/>
+                <View android:layout_width="match_parent" android:layout_height="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hora" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:30 – 11:00" android:textSize="14sp" android:textColor="@color/negro"/>
+                <View android:layout_width="match_parent" android:layout_height="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Consultorio" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Consultorio 2" android:textSize="14sp" android:textColor="@color/negro"/>
+                <View android:layout_width="match_parent" android:layout_height="10dp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Estado inicial" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="10dp" android:paddingEnd="10dp" android:paddingTop="3dp" android:paddingBottom="3dp" android:background="@drawable/bg_chip_azul" android:text="Programada" android:textSize="12sp" android:textColor="@color/negro"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="12dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="10dp" android:background="@drawable/bg_aviso_azul">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ⓘ Podrás reprogramar una sola vez (hasta 24 h antes) o cancelar (hasta 3 h antes)." android:textSize="12sp" android:textColor="@color/negro"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="20dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:paddingEnd="6dp">
+                    <Button android:id="@+id/btnAnterior" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_boton_secundario" android:backgroundTint="@null" android:stateListAnimator="@null" android:elevation="0dp" android:text="Anterior" android:textAllCaps="false" android:textColor="@color/azul_primario" android:textSize="16sp" android:textStyle="bold"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:paddingStart="6dp">
+                    <Button android:id="@+id/btnConfirmarCita" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_boton_principal" android:backgroundTint="@null" android:stateListAnimator="@null" android:elevation="0dp" android:text="Confirmar cita" android:textAllCaps="false" android:textColor="@color/blanco" android:textSize="16sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
