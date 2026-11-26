@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tarjeta"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:padding="2dp">
+
+    <!-- Bloque de fecha -->
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtCitaMes"
+            style="@style/Texto.Etiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/azul_primario"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/blanco"
+            tools:text="nov" />
+
+        <TextView
+            android:id="@+id/txtCitaDia"
+            style="@style/Texto.TituloPanel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:text="26" />
+    </LinearLayout>
+
+    <!-- Datos de la cita -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/txtCitaHora"
+            style="@style/Texto.Encabezado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="11:45" />
+
+        <TextView
+            android:id="@+id/txtCitaPersona"
+            style="@style/Texto.Cuerpo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Juan Pérez López" />
+
+        <TextView
+            android:id="@+id/txtCitaDetalle"
+            style="@style/Texto.Secundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Consultorio 3" />
+
+        <TextView
+            android:id="@+id/txtCitaEstado"
+            style="@style/EtiquetaEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Programada" />
+    </LinearLayout>
+</LinearLayout>

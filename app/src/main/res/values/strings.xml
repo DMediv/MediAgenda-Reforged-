@@ -69,4 +69,12 @@
     <string name="nav_agenda">Agenda</string>
     <string name="nav_pacientes">Pacientes</string>
     <string name="desc_cerrar_sesion">Cerrar sesión</string>
+
+    <string name="panel_resumen_hoy">Resumen de hoy</string>
+    <string name="panel_programadas">Programadas</string>
+    <string name="panel_atendidas">Atendidas</string>
+    <string name="panel_siguiente_cita">Siguiente cita</string>
+    <string name="panel_sin_citas">No tienes citas próximas.</string>
+    <string name="panel_agenda">Agenda</string>
+    <string name="panel_mis_pacientes">Mis pacientes</string>
 </resources>
