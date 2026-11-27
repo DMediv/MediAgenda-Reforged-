@@ -13,4 +13,5 @@
     <dimen name="sombra_boton">3dp</dimen>
     <dimen name="icono">24dp</dimen>
     <dimen name="icono_estado">48dp</dimen>
+    <dimen name="alto_acceso">112dp</dimen>
 </resources>

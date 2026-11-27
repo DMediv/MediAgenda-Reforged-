@@ -56,6 +56,7 @@ class PanelMedicoActivity : AppCompatActivity() {
         clsEstilos.activarDestino(findViewById(R.id.navInicio))
 
         txtNombreMedico.text = intent.getStringExtra("NOMBRE") ?: ""
+
     }
 
     override fun onResume() {

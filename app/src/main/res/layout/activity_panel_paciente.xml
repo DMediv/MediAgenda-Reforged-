@@ -1,72 +1,211 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/fondo">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="56dp" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingEnd="16dp" android:background="@color/blanco">
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="♡ MediAgenda" android:textSize="20sp" android:textColor="@color/azul_primario" android:textStyle="bold"/>
-        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⇥" android:textSize="22sp" android:textColor="@color/negro"/>
-    </LinearLayout>
-    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hola, Ana María" android:textSize="24sp" android:textColor="@color/negro" android:textStyle="bold"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Paciente" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
-            <View android:layout_width="match_parent" android:layout_height="20dp"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Próxima cita" android:textSize="18sp" android:textColor="@color/azul_primario" android:textStyle="bold"/>
-            <View android:layout_width="match_parent" android:layout_height="8dp"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_tarjeta">
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                    <LinearLayout android:layout_width="42dp" android:layout_height="56dp" android:gravity="center" android:orientation="vertical" android:background="@color/azul_primario">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12 nov" android:textSize="11sp" android:textColor="@color/blanco" android:textStyle="bold"/>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.PanelPacienteActivity">
+
+    <include layout="@layout/barra_panel" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margen_pantalla">
+
+
+                <TextView
+                    android:id="@+id/txtSaludo"
+                    style="@style/Texto.TituloPanel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Hola, Juan" />
+
+                <TextView
+                    style="@style/Texto.Encabezado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/separacion_secciones"
+                    android:text="@string/panel_proxima_cita" />
+
+                <include
+                    android:id="@+id/lytProximaCita"
+                    layout="@layout/tarjeta_cita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/separacion_lista"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtSinCitas"
+                    style="@style/Texto.Secundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/separacion_lista"
+                    android:text="@string/panel_sin_citas"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/separacion_secciones"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lytAccesoInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/alto_acceso"
+                        android:layout_marginEnd="@dimen/separacion_lista"
+                        android:layout_weight="1"
+                        android:background="@drawable/tarjeta"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:minHeight="96dp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/relleno_tarjeta">
+
+                        <ImageView
+                            android:layout_width="@dimen/icono"
+                            android:layout_height="@dimen/icono"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_perfil"
+                            app:tint="@color/azul_primario" />
+
+                        <TextView
+                            style="@style/Texto.Cuerpo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/panel_info_personal"
+                            android:maxLines="2"/>
                     </LinearLayout>
-                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:paddingStart="10dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10:30" android:textSize="16sp" android:textColor="@color/negro" android:textStyle="bold"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dr. Alejandro Ramírez Fuentes" android:textSize="14sp" android:textColor="@color/negro"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medicina interna · Consultorio 2" android:textSize="12sp" android:textColor="@color/texto_secundario"/>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="10dp" android:paddingEnd="10dp" android:paddingTop="3dp" android:paddingBottom="3dp" android:background="@drawable/bg_chip_azul" android:text="Programada" android:textSize="12sp" android:textColor="@color/negro"/>
+
+                    <LinearLayout
+                        android:id="@+id/lytAccesoMisCitas"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/alto_acceso"
+                        android:layout_weight="1"
+                        android:background="@drawable/tarjeta"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:minHeight="96dp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/relleno_tarjeta"
+                        android:maxLines="2">
+
+                        <ImageView
+                            android:layout_width="@dimen/icono"
+                            android:layout_height="@dimen/icono"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_mis_citas"
+                            app:tint="@color/azul_primario" />
+
+                        <TextView
+                            style="@style/Texto.Cuerpo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/nav_mis_citas" />
                     </LinearLayout>
-                    <TextView android:layout_width="24dp" android:layout_height="48dp" android:gravity="center" android:text="›" android:textSize="24sp" android:textColor="@color/negro"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/separacion_lista"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/lytAccesoAgendar"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/alto_acceso"
+                        android:layout_marginEnd="@dimen/separacion_lista"
+                        android:layout_weight="1"
+                        android:background="@drawable/tarjeta"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:minHeight="96dp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/relleno_tarjeta"
+                        android:maxLines="2">
+
+                        <ImageView
+                            android:layout_width="@dimen/icono"
+                            android:layout_height="@dimen/icono"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_agendar"
+                            app:tint="@color/azul_primario" />
+
+                        <TextView
+                            style="@style/Texto.Cuerpo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/panel_agendar_cita" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lytAccesoHistorial"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/alto_acceso"
+                        android:layout_weight="1"
+                        android:background="@drawable/tarjeta"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:minHeight="96dp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/relleno_tarjeta">
+
+                        <ImageView
+                            android:layout_width="@dimen/icono"
+                            android:layout_height="@dimen/icono"
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/ic_historial"
+                            app:tint="@color/azul_primario" />
+
+                        <TextView
+                            style="@style/Texto.Cuerpo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:text="@string/panel_historial_citas"
+                            android:maxLines="2"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-            <View android:layout_width="match_parent" android:layout_height="24dp"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Accesos" android:textSize="18sp" android:textColor="@color/azul_primario" android:textStyle="bold"/>
-            <View android:layout_width="match_parent" android:layout_height="8dp"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:paddingEnd="5dp">
-                    <Button android:id="@+id/btnInformacion" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_boton_secundario" android:backgroundTint="@null" android:stateListAnimator="@null" android:elevation="0dp" android:text="Información personal" android:textAllCaps="false" android:textColor="@color/azul_primario" android:textSize="16sp" android:textStyle="bold"/>
-                </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:paddingStart="5dp">
-                    <Button android:id="@+id/btnMisCitas" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_boton_secundario" android:backgroundTint="@null" android:stateListAnimator="@null" android:elevation="0dp" android:text="Mis citas" android:textAllCaps="false" android:textColor="@color/azul_primario" android:textSize="16sp" android:textStyle="bold"/>
-                </LinearLayout>
-            </LinearLayout>
-            <View android:layout_width="match_parent" android:layout_height="8dp"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:paddingEnd="5dp">
-                    <Button android:id="@+id/btnAgendar" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_boton_secundario" android:backgroundTint="@null" android:stateListAnimator="@null" android:elevation="0dp" android:text="Agendar cita" android:textAllCaps="false" android:textColor="@color/azul_primario" android:textSize="16sp" android:textStyle="bold"/>
-                </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:paddingStart="5dp">
-                    <Button android:id="@+id/btnHistorial" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_boton_secundario" android:backgroundTint="@null" android:stateListAnimator="@null" android:elevation="0dp" android:text="Historial de citas" android:textAllCaps="false" android:textColor="@color/azul_primario" android:textSize="16sp" android:textStyle="bold"/>
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:orientation="horizontal" android:background="@color/blanco">
-        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="match_parent" android:layout_height="28dp" android:text="⌂" android:textSize="20sp" android:textColor="@color/azul_navegacion"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Inicio" android:textSize="10sp" android:textColor="@color/azul_navegacion"/>
-        </LinearLayout>
-        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="match_parent" android:layout_height="28dp" android:text="▣" android:textSize="20sp" android:textColor="@color/texto_secundario"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mis citas" android:textSize="10sp" android:textColor="@color/texto_secundario"/>
-        </LinearLayout>
-        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="match_parent" android:layout_height="28dp" android:text="+" android:textSize="20sp" android:textColor="@color/texto_secundario"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Agendar" android:textSize="10sp" android:textColor="@color/texto_secundario"/>
-        </LinearLayout>
-        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="match_parent" android:layout_height="28dp" android:text="☷" android:textSize="20sp" android:textColor="@color/texto_secundario"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Historial" android:textSize="10sp" android:textColor="@color/texto_secundario"/>
-        </LinearLayout>
-        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
-            <TextView android:layout_width="match_parent" android:layout_height="28dp" android:text="♙" android:textSize="20sp" android:textColor="@color/texto_secundario"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Perfil" android:textSize="10sp" android:textColor="@color/texto_secundario"/>
-        </LinearLayout>
-    </LinearLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/prgCargando"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <include layout="@layout/navegacion_paciente" />
 </LinearLayout>

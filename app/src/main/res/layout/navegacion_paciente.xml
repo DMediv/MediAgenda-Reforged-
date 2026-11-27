@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/alto_navegacion"
+    android:background="@drawable/fondo_navegacion"
+    android:orientation="horizontal"
+    android:paddingTop="2dp">
+
+    <LinearLayout
+        android:id="@+id/navInicio"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_inicio"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:text="@string/nav_inicio"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/navMisCitas"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_mis_citas"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:text="@string/nav_mis_citas"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/navAgendar"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_agendar"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:text="@string/nav_agendar"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/navHistorial"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_historial"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:text="@string/nav_historial"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/navPerfil"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="56dp"
+            android:layout_height="28dp">
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_perfil"
+                app:tint="@color/texto_secundario" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Texto.Nota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:text="@string/nav_perfil"
+            android:textColor="@color/texto_secundario" />
+    </LinearLayout>
+</LinearLayout>
