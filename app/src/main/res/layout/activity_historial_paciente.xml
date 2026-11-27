@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.HistorialPacienteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_barra_superior"
+        android:background="@color/azul_primario"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/desc_regresar"
+            android:src="@drawable/ic_regresar"
+            app:tint="@color/blanco" />
+
+        <TextView
+            style="@style/Texto.TituloBarra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/historial_titulo"
+            android:textColor="@color/blanco" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/margen_pantalla"
+        android:paddingTop="@dimen/margen_pantalla"
+        android:paddingEnd="@dimen/margen_pantalla">
+
+        <TextView
+            android:id="@+id/txtNombrePaciente"
+            style="@style/Texto.Encabezado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Juan Pérez Martínez" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/separacion_lista"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPestanaConmigo"
+                style="@style/Texto.Etiqueta"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="@dimen/separacion_lista"
+                android:layout_weight="1"
+                android:background="@drawable/pestana"
+                android:gravity="center"
+                android:text="@string/historial_conmigo"
+                android:textColor="@color/texto_pestana" />
+
+            <TextView
+                android:id="@+id/txtPestanaOtras"
+                style="@style/Texto.Etiqueta"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/pestana"
+                android:gravity="center"
+                android:text="@string/historial_otras"
+                android:textColor="@color/texto_pestana" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/separacion_lista"
+            android:background="@drawable/aviso_info"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <ImageView
+                android:layout_width="@dimen/icono"
+                android:layout_height="@dimen/icono"
+                android:layout_marginEnd="8dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_info"
+                app:tint="@color/azul_primario" />
+
+            <TextView
+                style="@style/Texto.Cuerpo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/historial_aviso" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvCitas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/margen_pantalla"
+            android:paddingTop="@dimen/separacion_lista"
+            android:paddingEnd="@dimen/margen_pantalla"
+            android:paddingBottom="@dimen/margen_pantalla"
+            tools:listitem="@layout/tarjeta_cita" />
+
+        <TextView
+            android:id="@+id/txtVacio"
+            style="@style/Texto.Secundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/margen_pantalla"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/prgCargando"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <include layout="@layout/navegacion_medico" />
+</LinearLayout>

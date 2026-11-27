@@ -63,5 +63,15 @@ object clsFechas {
         return "$dia de ${MESES_LARGOS[mes - 1]} de $anio"
     }
 
+    fun hoy(): String {
+        val c = Calendar.getInstance()
+        return String.format(Locale.ROOT, "%04d-%02d-%02d",
+            c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH))
+    }
+
+    fun nombreMes(mes: Int, anio: Int): String {
+        return "${MESES_LARGOS[mes]} $anio"
+    }
+
 
 }

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.AgendaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_barra_superior"
+        android:background="@color/azul_primario"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/desc_regresar"
+            android:src="@drawable/ic_regresar"
+            app:tint="@color/blanco" />
+
+        <TextView
+            style="@style/Texto.TituloBarra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/agenda_titulo"
+            android:textColor="@color/blanco" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margen_pantalla">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tarjeta"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btnMesAnterior"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/desc_mes_anterior"
+                        android:src="@drawable/ic_anterior"
+                        app:tint="@color/negro" />
+
+                    <TextView
+                        android:id="@+id/txtMes"
+                        style="@style/Texto.Encabezado"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        tools:text="noviembre 2026" />
+
+                    <ImageButton
+                        android:id="@+id/btnMesSiguiente"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/desc_mes_siguiente"
+                        android:src="@drawable/ic_siguiente"
+                        app:tint="@color/negro" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    tools:ignore="HardcodedText">
+
+                    <TextView style="@style/Texto.Nota" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textColor="@color/texto_secundario" android:text="L" />
+                    <TextView style="@style/Texto.Nota" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textColor="@color/texto_secundario" android:text="M" />
+                    <TextView style="@style/Texto.Nota" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textColor="@color/texto_secundario" android:text="M" />
+                    <TextView style="@style/Texto.Nota" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textColor="@color/texto_secundario" android:text="J" />
+                    <TextView style="@style/Texto.Nota" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textColor="@color/texto_secundario" android:text="V" />
+                    <TextView style="@style/Texto.Nota" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textColor="@color/texto_secundario" android:text="S" />
+                    <TextView style="@style/Texto.Nota" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:textColor="@color/texto_secundario" android:text="D" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvCalendario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    tools:itemCount="35"
+                    tools:listitem="@layout/item_dia" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/punto_cita" />
+
+                <TextView
+                    style="@style/Texto.Nota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agenda_leyenda"
+                    android:textColor="@color/texto_secundario" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtTituloCitas"
+                style="@style/Texto.Encabezado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/separacion_secciones"
+                tools:text="Citas del viernes 27 de noviembre de 2026" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/separacion_lista"
+                android:minHeight="56dp">
+
+                <LinearLayout
+                    android:id="@+id/lytCitasDia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tarjeta"
+                    android:orientation="vertical"
+                    android:padding="2dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtSinCitasDia"
+                    style="@style/Texto.Secundario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <ProgressBar
+                    android:id="@+id/prgCitas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/navegacion_medico" />
+</LinearLayout>

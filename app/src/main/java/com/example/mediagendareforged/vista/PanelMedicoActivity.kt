@@ -94,8 +94,8 @@ class PanelMedicoActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-        lytAccesoAgenda.setOnClickListener { mostrarAviso("Agenda: próximamente") }
-        navAgenda.setOnClickListener { mostrarAviso("Agenda: próximamente") }
+        lytAccesoAgenda.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, AgendaActivity::class.java) }
+        navAgenda.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, AgendaActivity::class.java) }
         lytAccesoPacientes.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, MisPacientesActivity::class.java) }
         navPacientes.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, MisPacientesActivity::class.java) }
     }

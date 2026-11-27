@@ -112,4 +112,15 @@
     <string name="info_tabaquismo">Tabaquismo</string>
     <string name="info_alcohol">Consumo de alcohol</string>
     <string name="info_ver_historial">Ver historial de citas</string>
+
+    <string name="historial_titulo">Historial de citas</string>
+    <string name="historial_conmigo">Conmigo</string>
+    <string name="historial_otras">Otras especialidades</string>
+    <string name="historial_aviso">Solo lectura. Cada consulta de «Otras especialidades» queda registrada en la bitácora.</string>
+
+    <string name="agenda_titulo">Agenda</string>
+    <string name="agenda_citas_del">Citas del %1$s</string>
+    <string name="agenda_leyenda">Días con citas · los días pasados no se consultan</string>
+    <string name="desc_mes_anterior">Mes anterior</string>
+    <string name="desc_mes_siguiente">Mes siguiente</string>
 </resources>
