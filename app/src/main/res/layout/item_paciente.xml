@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/separacion_lista"
+    android:background="@drawable/tarjeta"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/relleno_tarjeta">
+
+    <TextView
+        android:id="@+id/txtIniciales"
+        style="@style/Texto.Etiqueta"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circulo_avatar"
+        android:gravity="center"
+        android:textColor="@color/negro"
+        tools:text="JP" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNombrePaciente"
+            style="@style/Texto.Cuerpo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Juan Pérez López" />
+
+        <TextView
+            android:id="@+id/txtUltimaCita"
+            style="@style/Texto.Secundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Última cita: lun 9 nov" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/icono"
+        android:layout_height="@dimen/icono"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_siguiente"
+        app:tint="@color/texto_secundario" />
+</LinearLayout>
