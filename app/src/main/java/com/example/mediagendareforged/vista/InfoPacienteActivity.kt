@@ -1,5 +1,6 @@
 package com.example.mediagendareforged.vista
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
@@ -75,8 +76,13 @@ class InfoPacienteActivity : AppCompatActivity() {
     private fun configurarListeners() {
         btnRegresar.setOnClickListener { finish() }
         navInicio.setOnClickListener { clsNavegacion.abrirPanelMedico(this) }
-        navAgenda.setOnClickListener { mostrarAviso("Agenda: próximamente") }
-        btnVerHistorial.setOnClickListener { mostrarAviso("Historial de citas: próximamente") }
+        navAgenda.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, AgendaActivity::class.java) }
+        btnVerHistorial.setOnClickListener {
+            val intent = Intent(this, HistorialPacienteActivity::class.java)
+            intent.putExtra("ID_PACIENTE", idPaciente)
+            intent.putExtra("NOMBRE", nombrePaciente)
+            startActivity(intent)
+        }
     }
 
     fun mostrarCargando(cargando: Boolean) {
@@ -89,12 +95,12 @@ class InfoPacienteActivity : AppCompatActivity() {
         txtIniciales.text = clsEstilos.iniciales(nombre)
         txtNombre.text = nombre
 
-        lytDatosPersonales.removeAllViews()      // por si se recarga en onResume
+        lytDatosPersonales.removeAllViews()
         agregarDato(lytDatosPersonales, R.string.info_fecha_nacimiento, fechaNacimiento)
         agregarDato(lytDatosPersonales, R.string.info_genero, genero)
         agregarDato(lytDatosPersonales, R.string.info_telefono, telefono)
         agregarDato(lytDatosPersonales, R.string.info_direccion, direccion)
-        agregarDato(lytDatosPersonales, R.string.info_correo, correo)   // el correo va al final
+        agregarDato(lytDatosPersonales, R.string.info_correo, correo)
 
         scrContenido.visibility = View.VISIBLE
     }

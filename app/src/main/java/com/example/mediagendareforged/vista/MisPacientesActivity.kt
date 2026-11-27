@@ -74,7 +74,7 @@ class MisPacientesActivity : AppCompatActivity() {
         btnRegresar.setOnClickListener { finish() }
         txtBuscar.doAfterTextChanged { texto -> presentador.filtrar(texto?.toString() ?: "") }
         navInicio.setOnClickListener { clsNavegacion.abrirPanelMedico(this) }
-        navAgenda.setOnClickListener { mostrarAviso("Agenda: próximamente") }
+        navAgenda.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, AgendaActivity::class.java) }
     }
 
     fun mostrarCargando(cargando: Boolean) {

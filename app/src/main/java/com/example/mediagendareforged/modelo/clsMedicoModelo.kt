@@ -27,4 +27,22 @@ class clsMedicoModelo {
             retrofitCliente.api.obtenerInfoPaciente(idPaciente)
         }
     }
+
+    suspend fun obtenerHistorialCitasPaciente(idPaciente: Int, ambito: String): dataRespuesta<List<dataCita>> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.obtenerHistorialCitasPaciente(idPaciente, ambito)
+        }
+    }
+
+    suspend fun obtenerDiasConCitas(mes: String): dataRespuesta<dataDiasMes> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.obtenerDiasConCitas(mes)
+        }
+    }
+
+    suspend fun obtenerAgenda(fecha: String): dataRespuesta<List<dataCita>> {
+        return retrofitCliente.llamar {
+            retrofitCliente.api.obtenerAgenda(fecha)
+        }
+    }
 }
