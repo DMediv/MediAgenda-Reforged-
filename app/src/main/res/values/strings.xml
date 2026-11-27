@@ -123,4 +123,15 @@
     <string name="agenda_leyenda">Días con citas · los días pasados no se consultan</string>
     <string name="desc_mes_anterior">Mes anterior</string>
     <string name="desc_mes_siguiente">Mes siguiente</string>
+
+    <string name="nav_mis_citas">Mis citas</string>
+    <string name="nav_agendar">Agendar</string>
+    <string name="nav_historial">Historial</string>
+    <string name="nav_perfil">Perfil</string>
+
+    <string name="panel_saludo">Hola, %1$s</string>
+    <string name="panel_proxima_cita">Próxima cita</string>
+    <string name="panel_info_personal">Información personal</string>
+    <string name="panel_agendar_cita">Agendar cita</string>
+    <string name="panel_historial_citas">Historial de citas</string>
 </resources>
