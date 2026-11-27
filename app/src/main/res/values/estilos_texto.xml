@@ -47,4 +47,12 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/rojo_alerta</item>
     </style>
+
+    <style name="Texto.Enlace">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/azul_primario</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
 </resources>

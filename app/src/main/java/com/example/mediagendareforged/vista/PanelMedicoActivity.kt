@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.mediagendareforged.R
 import com.example.mediagendareforged.presentador.clsPanelMedicoPresentador
+import android.content.Intent
 
 class PanelMedicoActivity : AppCompatActivity() {
 
@@ -86,12 +87,17 @@ class PanelMedicoActivity : AppCompatActivity() {
     private fun configurarListeners() {
         btnCerrarSesion.setOnClickListener { presentador.cerrarSesion() }
 
-        // Provisional: estas pantallas se crean en los siguientes pasos
-        lytSiguienteCita.setOnClickListener { mostrarAviso("Detalle de cita: próximamente") }
+        lytSiguienteCita.setOnClickListener {
+            if (idSiguienteCita != 0) {
+                val intent = Intent(this, DetalleCitaMedicoActivity::class.java)
+                intent.putExtra("ID_CITA", idSiguienteCita)
+                startActivity(intent)
+            }
+        }
         lytAccesoAgenda.setOnClickListener { mostrarAviso("Agenda: próximamente") }
         navAgenda.setOnClickListener { mostrarAviso("Agenda: próximamente") }
-        lytAccesoPacientes.setOnClickListener { mostrarAviso("Mis pacientes: próximamente") }
-        navPacientes.setOnClickListener { mostrarAviso("Mis pacientes: próximamente") }
+        lytAccesoPacientes.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, MisPacientesActivity::class.java) }
+        navPacientes.setOnClickListener { clsNavegacion.abrirDestinoMedico(this, MisPacientesActivity::class.java) }
     }
 
     fun mostrarCargando(cargando: Boolean) {

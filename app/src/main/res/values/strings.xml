@@ -77,4 +77,39 @@
     <string name="panel_sin_citas">No tienes citas próximas.</string>
     <string name="panel_agenda">Agenda</string>
     <string name="panel_mis_pacientes">Mis pacientes</string>
+
+    <string name="detalle_titulo">Detalle de cita</string>
+    <string name="detalle_paciente">Paciente</string>
+    <string name="detalle_fecha">Fecha</string>
+    <string name="detalle_hora">Hora</string>
+    <string name="detalle_consultorio">Consultorio</string>
+    <string name="detalle_estado">Estado</string>
+    <string name="detalle_ver_paciente"><u>Ver paciente</u></string>
+    <string name="detalle_aviso">El estado de la cita se actualiza solo: pasa a «Atendida» al terminar (inicio + 30 min). Desde la app solo se consulta.</string>
+
+    <string name="pacientes_titulo">Mis pacientes</string>
+    <string name="pacientes_buscar">Buscar por nombre</string>
+    <string name="pacientes_ultima_cita">Última cita: %1$s</string>
+    <string name="pacientes_sin_pacientes">Aún no tienes pacientes con citas.</string>
+    <string name="pacientes_sin_resultados">No hay pacientes que coincidan.</string>
+
+    <string name="info_titulo">Información del paciente</string>
+    <string name="info_datos_personales">Datos personales</string>
+    <string name="info_historial_medico">Historial médico</string>
+    <string name="info_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="info_genero">Género</string>
+    <string name="info_telefono">Teléfono</string>
+    <string name="info_direccion">Dirección</string>
+    <string name="info_correo">Correo</string>
+    <string name="info_tipo_sangre">Tipo de sangre</string>
+    <string name="info_peso">Peso</string>
+    <string name="info_estatura">Estatura</string>
+    <string name="info_alergias">Alergias</string>
+    <string name="info_enfermedades">Enfermedades crónicas</string>
+    <string name="info_medicamentos">Medicamentos actuales</string>
+    <string name="info_cirugias">Cirugías previas</string>
+    <string name="info_antecedentes">Antecedentes familiares</string>
+    <string name="info_tabaquismo">Tabaquismo</string>
+    <string name="info_alcohol">Consumo de alcohol</string>
+    <string name="info_ver_historial">Ver historial de citas</string>
 </resources>

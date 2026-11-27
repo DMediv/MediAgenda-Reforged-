@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".vista.MisPacientesActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_barra_superior"
+        android:background="@color/azul_primario"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/desc_regresar"
+            android:src="@drawable/ic_regresar"
+            app:tint="@color/blanco" />
+
+        <TextView
+            style="@style/Texto.TituloBarra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/pacientes_titulo"
+            android:textColor="@color/blanco" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilBuscar"
+        style="@style/Campo.Buscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margen_pantalla"
+        android:layout_marginTop="@dimen/margen_pantalla"
+        android:layout_marginEnd="@dimen/margen_pantalla"
+        app:startIconDrawable="@drawable/ic_buscar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtBuscar"
+            style="@style/CampoTexto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pacientes_buscar"
+            android:imeOptions="actionSearch"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:textColorHint="@color/texto_secundario" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvPacientes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/margen_pantalla"
+            android:paddingTop="@dimen/separacion_lista"
+            android:paddingEnd="@dimen/margen_pantalla"
+            android:paddingBottom="@dimen/margen_pantalla"
+            tools:listitem="@layout/item_paciente" />
+
+        <TextView
+            android:id="@+id/txtVacio"
+            style="@style/Texto.Secundario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/margen_pantalla"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/prgCargando"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <include layout="@layout/navegacion_medico" />
+</LinearLayout>

@@ -19,12 +19,12 @@ object clsEstilos {
         val dosDp = (2 * contexto.resources.displayMetrics.density).toInt()
 
         indicador.setBackgroundResource(R.drawable.indicador_navegacion)
-        icono.setPadding(dosDp, dosDp, dosDp, dosDp)          // 24dp − 2×2dp = icono de 20dp
+        icono.setPadding(dosDp, dosDp, dosDp, dosDp)
         ImageViewCompat.setImageTintList(icono,
             ColorStateList.valueOf(contexto.getColor(R.color.azul_navegacion)))
         texto.setTextColor(contexto.getColor(R.color.azul_primario))
         texto.typeface = ResourcesCompat.getFont(contexto, R.font.inter_semibold)
-        destino.isClickable = false                            // ya estás en esa pantalla
+        destino.isClickable = false
     }
 
     fun pintarEstado(etiqueta: TextView, estado: String) {
@@ -37,5 +37,12 @@ object clsEstilos {
         }
         etiqueta.text = estado
         etiqueta.backgroundTintList = ColorStateList.valueOf(etiqueta.context.getColor(color))
+    }
+
+    fun iniciales(nombre: String): String {
+        return nombre.split(" ")
+            .filter { it.isNotBlank() }
+            .take(2)
+            .joinToString("") { it.first().uppercase() }
     }
 }

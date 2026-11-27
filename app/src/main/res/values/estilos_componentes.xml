@@ -84,4 +84,12 @@
         <item name="android:background">@color/divisor</item>
     </style>
 
+    <style name="Campo.Buscador">
+        <item name="boxCornerRadiusTopStart">21dp</item>
+        <item name="boxCornerRadiusTopEnd">21dp</item>
+        <item name="boxCornerRadiusBottomStart">21dp</item>
+        <item name="boxCornerRadiusBottomEnd">21dp</item>
+        <item name="startIconTint">@color/texto_secundario</item>
+    </style>
+
 </resources>
